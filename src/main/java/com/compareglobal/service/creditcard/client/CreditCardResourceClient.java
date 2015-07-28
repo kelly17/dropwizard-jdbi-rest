@@ -1,11 +1,14 @@
 package com.compareglobal.service.creditcard.client;
 
+import com.compareglobal.service.creditcard.api.beans.Compare;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.compareglobal.service.creditcard.api.CreditCardResource;
 import com.compareglobal.service.creditcard.api.beans.CreditCard;
 
+import javax.swing.text.html.parser.Entity;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 public class CreditCardResourceClient implements CreditCardResource {
@@ -26,11 +29,7 @@ public class CreditCardResourceClient implements CreditCardResource {
     }
 
     @Override
-    public List<CreditCard> getCreditCards(String locale) {
-        final ClientResponse clientResponse = client.resource(
-                resourceUrl + "/" + locale).type(MediaType.APPLICATION_JSON_TYPE)
-                .get(ClientResponse.class);
-
-        return (List<CreditCard>) clientResponse.getEntity(CreditCard.class);
+    public List<CreditCard> home(Compare compare) {
+        return null;
     }
 }
