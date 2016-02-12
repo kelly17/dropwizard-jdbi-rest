@@ -72,7 +72,7 @@ public class CreditCardApplication extends Application<CreditCardApplicationConf
         try {
             dao.findCreditCardById("1");
             dao.findCreditCards("pt-PT");
-            logger.info("User table selected");
+            logger.info("User table selected...");
         } catch (Exception e) {
             // probably the table already exists. Don't worry about it.
             if (e.getCause().getMessage().contains("already exists in Schema")) {
